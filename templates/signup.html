@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+
+<div class="container border rounded">
+    <div class="container p-4">
+        <h1 class="text-center">SignUp</h1>
+        <form action="{% url "signup" %}" method='post'>
+            {% csrf_token %}
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input type="text" name="username" class="form-control" id="username" aria-describedby="emailHelp">
+             
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" name="password" class="form-control" id="password">
+            </div>
+
+            <div class="mb-3">
+                <label for="confpassword" class="form-label">Confirm Password</label>
+                <input type="password" name="confpassword" class="form-control" id="confpassword">
+              </div>
+            
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+    </div>
+</div>
+{% endblock content %}
